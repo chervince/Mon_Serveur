@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>SLIDER</title>
+</head>
+
+<style>
+	.slider {
+		width: 500px;
+		height: 300px;
+		overflow: hidden;
+		margin: 150px auto;
+	}
+	.slides {
+		width: calc(500px * 3);
+		animation: glisse 10s infinite;
+	}
+	.slide {
+		float: left;
+	}
+
+	@keyframes glisse {
+		0% {
+			transform: translateX(0);
+		}
+		10% {
+			transform: translateX(0);
+		}
+		33% {
+			transform: translateX(-500px);
+		}
+		43% {
+			transform: translateX(-500px);
+		}
+		66% {
+			transform: translateX(-1000px);
+		}
+		76% {
+			transform: translateX(-1000px);
+		}
+		100% {
+			transform: translateX(0);
+		}
+	}
+
+</style>
+<body>
+	<div class="slider">
+		<div class="slides">
+			<div class="slide"><img src="images\montage couve.jpg" alt="" /></div>
+			<div class="slide"><img src="images\montage couve2.jpg" alt="" /></div>
+			<div class="slide"><img src="images\montage couve3.jpg" alt="" /></div>
+		</div>
+	</div>
+	<div><center>
+		<form action="receiveform.php" method="POST">
+		<p>
+			Nom d'utilisateur : <input name="nom" type="text" />
+		</p>
+		<p>
+			mot de passe : <input name="prenom" type="text" />
+		</p>
+		
+		<p>
+			Adresse couriel : <input name="email" type="email" />
+			
+		</p>
+		<p>
+			Pays : 
+			<select name="country" >
+				<option value="canada">Canada</option>
+				<option value="russia">Russie</option>
+				<option value="guam">Guam</option>
+		</p>
+			<p>
+				<input type="submit" /></p>
+	</center></div>
+	</div>
+</body>
+</html>
