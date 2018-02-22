@@ -27,16 +27,16 @@
 	$email 					= $_POST["email"];
 	$country 				= convertCountryValueToFrenchLabel($_POST["country"]);
 	$servername 			= "localhost";
-	$username 				= "webmaster";
-	$password 				= "Vincent555";
-	$dbname 				= "site_php_2018";
+	$username 				= "root";
+	$password 				= "";
+	$dbname 				= "formulaire";
 
 	try {
     	$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     	// set the PDO error mode to exception
     	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     	$sql = "INSERT INTO form_246 (nom, prenom, email, country)
-    	VALUES ('bonjour', 'demain', 'chervince@gmail.com', 'oui')";
+    	VALUES ('$nom', '$prenom', '$email', '$country')";
     	// use exec() because no results are returned
     	$conn->exec($sql);
     	$last_id = $conn->lastInsertId();
@@ -47,7 +47,7 @@
     	echo $sql . "<br>" . $e->getMessage();
     	}
 
-$conn = null;
+		$conn = null;
 	
 
 ?>
